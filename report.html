@@ -449,7 +449,6 @@ display: none;
 
 
 <pre class="r"><code>here::i_am(&quot;DATA550_finalproject/report.Rmd&quot;)</code></pre>
-<pre><code>## here() starts at C:/Users/sarsa/OneDrive/Desktop/DATA550</code></pre>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
 <p>In this analysis I am investigating the association between prenatal
@@ -465,13 +464,33 @@ PM2.5 and child total problems score. I adjusted for ethnicity, maternal
 socioeconomic status, and maternal age as potentially important
 covariates and confounders.</p>
 <p>Since I cannot upload the actual data due to data use agreements and
-privacy concerns, I simulated a dataset with similar variables.</p>
+privacy concerns, I simulated a dataset with similar variables</p>
+</div>
+<div id="dataset-simulation-parameters" class="section level2">
+<h2>Dataset Simulation Parameters</h2>
+<p><u>sample size</u>: 500</p>
+<p><u>exposure</u>: prenatal pm2.5 concentrations (continuous)</p>
+<p><u>outcome</u>: CBCL total problems score (continuous)</p>
+<p><u>covariates</u></p>
+<ul>
+<li><p>maternal SES (categorical 3-level;1=low, 2=med, 3=high)</p></li>
+<li><p>ethnicity (binary 1=Mixed, 2=Black African)</p></li>
+<li><p>maternal age (continuous)</p></li>
+</ul>
 </div>
 <div id="descriptive-analysis" class="section level2">
 <h2>Descriptive Analysis</h2>
-<div id="table-1--study-characteristics-of-the-drakenstein-child-health-study" class="section level3">
+<div id="table-1--study-characteristics-of-the-drakenstein-child-health-study." class="section level3">
 <h3>Table 1- Study Characteristics of the Drakenstein Child Health
-Study</h3>
+Study.</h3>
+<p>The population sample size is 500.The median PM2.5 concentration is
+103 micrometers which is much higher than the EPA standard of 35
+micrometers for indoor air pollution. The median maternal age is 27.5
+years with the youngest being 15 years and the oldest being 44 years.
+The majority of the population come from Mixed ancestry (55.2%). The
+mean CBCL Total Problems score is 60.3, with a standard deviation of
+14.8, which indicates that on average, a child in this study participant
+is at risk for psychopathology and problem behavior.</p>
 <pre class="r"><code>readRDS(
   file =here::here(&quot;DATA550_finalproject/output/table_one.RDS&quot;) #! TO DO: add appropriate file path to read table 1
 )</code></pre>
@@ -555,8 +574,14 @@ Study</h3>
 </div>
 <div id="regression-analysis" class="section level2">
 <h2>Regression Analysis</h2>
-<div id="figure-1--beta-and-confidence-intervals-for-model" class="section level3">
-<h3>Figure 1- Beta and confidence intervals for model</h3>
+<div id="figure-1--beta-and-95-confidence-intervals" class="section level3">
+<h3>Figure 1- Beta and 95% Confidence Intervals</h3>
+<p>In this model we regressed the outcome, CBCL Total problems score
+against the exposure, pm2.5 concentration, adjusting for maternal age,
+ethnicity, and maternal SES. In the figure you can see the effect
+estimate and 95% CI. The estimate is generally precise and does not
+cross the null, indicating an association between PM2.5 concentration
+and risk of child psychopathology.</p>
 <pre class="r"><code>readRDS(
   file=here::here(&quot;DATA550_finalproject/output/figure_one.RDS&quot;)
 )</code></pre>

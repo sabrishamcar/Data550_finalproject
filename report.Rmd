@@ -2,30 +2,37 @@
 output: html_document
 ---
 
-```{r, here-i-am}
+```{r, here-i-am, message=F}
 here::i_am("DATA550_finalproject/report.Rmd")
 ```
+
 ## Introduction
-In this analysis I am investigating the association between prenatal
-particulate matter exposure and child psychopathology in the Drakenstein
-Child Health Study, a birth cohort based in Cape Town South Africa
-(N=500). We measured particulate matter 2.5 (PM2.5) concentrations
-during the second trimester of pregnancy. Child psychopathology was
-measured at 6.5 years of age using the Child Behavior Checklist (CBCL).
-I utilized the total problems scale, in which larger scores means that
-the child is exhibiting more behavioral problems. I ran an adjusted
-linear regression model to quantify the association between prenatal
-PM2.5 and child total problems score. I adjusted for ethnicity, maternal
-socioeconomic status, and maternal age as potentially important
-covariates and confounders.
 
-Since I cannot upload the actual data due to data use agreements and
-privacy concerns, I simulated a dataset with similar variables.
+In this analysis I am investigating the association between prenatal particulate matter exposure and child psychopathology in the Drakenstein Child Health Study, a birth cohort based in Cape Town South Africa (N=500). We measured particulate matter 2.5 (PM2.5) concentrations during the second trimester of pregnancy. Child psychopathology was measured at 6.5 years of age using the Child Behavior Checklist (CBCL). I utilized the total problems scale, in which larger scores means that the child is exhibiting more behavioral problems. I ran an adjusted linear regression model to quantify the association between prenatal PM2.5 and child total problems score. I adjusted for ethnicity, maternal socioeconomic status, and maternal age as potentially important covariates and confounders.
 
+Since I cannot upload the actual data due to data use agreements and privacy concerns, I simulated a dataset with similar variables
+
+## Dataset Simulation Parameters
+
+[sample size]{.underline}: 500
+
+[exposure]{.underline}: prenatal pm2.5 concentrations (continuous)
+
+[outcome]{.underline}: CBCL total problems score (continuous)
+
+[covariates]{.underline}
+
+-   maternal SES (categorical 3-level;1=low, 2=med, 3=high)
+
+-   ethnicity (binary 1=Mixed, 2=Black African)
+
+-   maternal age (continuous)
 
 ## Descriptive Analysis
 
-### Table 1- Study Characteristics of the Drakenstein Child Health Study
+### Table 1- Study Characteristics of the Drakenstein Child Health Study.
+
+The population sample size is 500.The median PM2.5 concentration is 103 micrometers which is much higher than the EPA standard of 35 micrometers for indoor air pollution. The median maternal age is 27.5 years with the youngest being 15 years and the oldest being 44 years. The majority of the population come from Mixed ancestry (55.2%). The mean CBCL Total Problems score is 60.3, with a standard deviation of 14.8, which indicates that on average, a child in this study participant is at risk for psychopathology and problem behavior.
 
 ```{r, table1}
 readRDS(
@@ -35,7 +42,9 @@ readRDS(
 
 ## Regression Analysis
 
-### Figure 1- Beta and confidence intervals for model
+### Figure 1- Beta and 95% Confidence Intervals
+
+In this model we regressed the outcome, CBCL Total problems score against the exposure, pm2.5 concentration, adjusting for maternal age, ethnicity, and maternal SES. In the figure you can see the effect estimate and 95% CI. The estimate is generally precise and does not cross the null, indicating an association between PM2.5 concentration and risk of child psychopathology.
 
 ```{r, figure1, warning=F}
 readRDS(
