@@ -17,7 +17,7 @@ Code for creating Figure 1 can be found in
 
 Code to render the RMD report can be found in `code/03_render_report.R`
 
-# Generating the Final Report and Report Contents
+## Generating the Final Report and Report Contents
 
 The report can be compiled using the `Makefile` which passes R scripts
 00-03 and the simulated dataset `data_final.RDS` as prerequisites. The
