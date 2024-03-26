@@ -1,14 +1,18 @@
-here::i_am("DATA550_finalproject/code/01_make_table1.R")
+#Make Table1
 
-data <- readRDS(
-  file = here::here("DATA550_finalproject/data","data_final.rds"))
-
-packages<-c("truncnorm","table1","jtools","ggplot2","broom.mixed")
+packages<-c("here","truncnorm","table1","jtools","ggplot2","broom.mixed")
 for(package in packages){
   if(!require(package,character.only = T,quietly = T)){
     install.packages(package,repos="http://lib.stat.cmu.edu/R/CRAN/")
   }
 }
+
+here::i_am("code/01_make_table1.R")
+
+data <- readRDS(
+  file = here::here("DATA550_finalproject/data","data_final.rds"))
+
+
 
 #label variables correctly
 label(data_final$maternalSES)<-"Maternal Socioeconomic Status"
@@ -21,6 +25,6 @@ table_one<-table1(~ pm25conc + maternalSES + ethnicity + maternal_age + cbcl_tot
 
 saveRDS(
   table_one,
-  file =here::here("DATA550_finalproject/output/","table_one.RDS") #! TO DO: add appropriate file path to subproject1/output
+  file =here::here("output/","table_one.RDS") #! TO DO: add appropriate file path to subproject1/output
 )
 

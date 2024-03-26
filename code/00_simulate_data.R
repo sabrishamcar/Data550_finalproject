@@ -1,11 +1,12 @@
-here::i_am("DATA550_finalproject/code/00_simulate_data.R")
-
-packages<-c("truncnorm","table1","jtools","ggplot2","broom.mixed")
+#Simulate Data
+packages<-c("here","truncnorm","table1","jtools","ggplot2","broom.mixed")
 for(package in packages){
   if(!require(package,character.only = T,quietly = T)){
     install.packages(package,repos="http://lib.stat.cmu.edu/R/CRAN/")
   }
 }
+
+here::i_am("code/00_simulate_data.R")
 
 set.seed(123)
 
@@ -31,4 +32,4 @@ data_final$ethnicity<-factor(data_final$ethnicity,levels=c(0,1),labels=c("Mixed"
 
 saveRDS(
   data_final,
-  file =here::here("DATA550_finalproject/data/","data_final.RDS"))
+  file =here::here("data/","data_final.RDS"))

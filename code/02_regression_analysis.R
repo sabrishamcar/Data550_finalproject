@@ -1,14 +1,16 @@
-here::i_am("DATA550_finalproject/code/02_regression_analysis.R")
+#Regression Analysis and Figure
 
-data <- readRDS(
-  file = here::here("DATA550_finalproject/data","data_final.rds"))
-
-packages<-c("truncnorm","table1","jtools","ggplot2","broom.mixed")
+packages<-c("here","truncnorm","table1","jtools","ggplot2","broom.mixed")
 for(package in packages){
   if(!require(package,character.only = T,quietly = T)){
     install.packages(package,repos="http://lib.stat.cmu.edu/R/CRAN/")
   }
 }
+
+here::i_am("code/02_regression_analysis.R")
+
+data <- readRDS(
+  file = here::here("data","data_final.rds"))
 
 model<-lm(cbcl_total_problems ~ pm25conc + maternal_age + 
             maternalSES + ethnicity, data=data_final)
@@ -18,6 +20,6 @@ figure_one<-plot_summs(model,coefs = c("PM2.5 Concentration"="pm25conc")) + xlim
 
 saveRDS(
   figure_one,
-  file = here::here("DATA550_finalproject/output/figure_one.RDS")
+  file = here::here("output/figure_one.RDS")
 )
 
