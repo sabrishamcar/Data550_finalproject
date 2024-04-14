@@ -9,8 +9,8 @@ for(package in packages){
 
 here::i_am("code/01_make_table1.R")
 
-data <- readRDS(
-  file = here::here("DATA550_finalproject/data","data_final.rds"))
+data_final <- readRDS(
+  file = here::here("data","data_final.rds"))
 
 
 

@@ -9,7 +9,7 @@ for(package in packages){
 
 here::i_am("code/02_regression_analysis.R")
 
-data <- readRDS(
+data_final <- readRDS(
   file = here::here("data","data_final.rds"))
 
 model<-lm(cbcl_total_problems ~ pm25conc + maternal_age + 

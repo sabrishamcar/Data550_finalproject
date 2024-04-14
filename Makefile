@@ -1,5 +1,4 @@
-report.html: code/03_render_report.R \
-	report.Rmd
+report.html: code/03_render_report.R output/table_one.RDS output/figure_one.RDS report.Rmd
 	Rscript code/03_render_report.R
 
 data/data_final.RDS: code/00_simulate_data.R
