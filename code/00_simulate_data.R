@@ -1,10 +1,17 @@
 #Simulate Data
-packages<-c("here","truncnorm","table1","jtools","ggplot2","broom.mixed")
-for(package in packages){
-  if(!require(package,character.only = T,quietly = T)){
-    install.packages(package,repos="http://lib.stat.cmu.edu/R/CRAN/")
-  }
-}
+# packages<-c("here","truncnorm","table1","jtools","ggplot2","broom.mixed")
+# for(package in packages){
+#   if(!require(package,character.only = T,quietly = T)){
+#     install.packages(package,repos="http://lib.stat.cmu.edu/R/CRAN/")
+#   }
+# }
+
+library(here)
+library(truncnorm)
+library(table1)
+library(jtools)
+library(ggplot2)
+library(broom.mixed)
 
 here::i_am("code/00_simulate_data.R")
 

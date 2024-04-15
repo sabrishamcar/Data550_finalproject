@@ -9,3 +9,7 @@ output/table_one.RDS: code/01_make_table1.R data/data_final.RDS
 
 output/figure_one.RDS: code/02_regression_analysis.R data/data_final.RDS
 	Rscript code/02_regression_analysis.R
+
+.PHONY: install
+install:
+	Rscript -e "renv::restore(prompt = FALSE)"
