@@ -29,4 +29,4 @@ table and figure.
 
 Step 1: `Run Rscript renv/activate.R`
 
-Step 2: Run make install, which will run `renv::restore()` to restore the package versions on your computer.
+Step 2: Run `make install`, which will run `renv::restore()` to restore the package versions on your computer.
