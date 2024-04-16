@@ -24,3 +24,8 @@ The report can be compiled using the `Makefile` which passes R scripts
 final report is called `report.Rmd`. The report contains an introduction
 to the analysis, Table 1, and Figure 1, along with descriptions for the
 table and figure.
+
+## Syncing R Environment and Packages
+
+Step 1: `Run Rscript renv/activate.R`
+Step 2: Run make install, which will run renv::restore() to restore the package versions on your computer.
