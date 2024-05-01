@@ -30,3 +30,7 @@ table and figure.
 Step 1: `Run Rscript renv/activate.R`
 
 Step 2: Run `make install`, which will run `renv::restore()` to restore the package versions on your computer.
+
+## Build report using a Docker image
+Step 1: Ensure you are in the working directory where this project lives
+Step 2: Run `make final_report/report.html`. This may take a few minutes to run.

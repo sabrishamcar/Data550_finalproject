@@ -17,7 +17,7 @@ library(broom.mixed)
 here::i_am("code/02_regression_analysis.R")
 
 data_final <- readRDS(
-  file = here::here("data","data_final.rds"))
+  file = here::here("data","data_final.RDS"))
 
 model<-lm(cbcl_total_problems ~ pm25conc + maternal_age + 
             maternalSES + ethnicity, data=data_final)

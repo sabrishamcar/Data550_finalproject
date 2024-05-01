@@ -3,7 +3,7 @@ output: html_document
 ---
 
 ```{r, here-i-am, message=F}
-here::i_am("DATA550_finalproject/report.Rmd")
+here::i_am("./report.Rmd")
 ```
 
 ## Introduction
@@ -36,7 +36,7 @@ The population sample size is 500.The median PM2.5 concentration is 103 micromet
 
 ```{r, table1}
 readRDS(
-  file =here::here("DATA550_finalproject/output/table_one.RDS") #! TO DO: add appropriate file path to read table 1
+  file =here::here("./output/table_one.RDS") #! TO DO: add appropriate file path to read table 1
 )
 ```
 
@@ -48,7 +48,7 @@ In this model we regressed the outcome, CBCL Total problems score against the ex
 
 ```{r, figure1, warning=F}
 readRDS(
-  file=here::here("DATA550_finalproject/output/figure_one.RDS")
+  file=here::here("./output/figure_one.RDS")
 )
 
 

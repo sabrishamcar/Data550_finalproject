@@ -16,7 +16,7 @@ library(broom.mixed)
 here::i_am("code/01_make_table1.R")
 
 data_final <- readRDS(
-  file = here::here("data","data_final.rds"))
+  file = here::here("data","data_final.RDS"))
 
 
 
