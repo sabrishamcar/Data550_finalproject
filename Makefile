@@ -15,14 +15,16 @@ install:
 	Rscript -e "renv::restore(prompt = FALSE)"
 
 #DOCKER-ASSOCIATED RULES
-PROJECTFILES= report.Rmd code/00_simulate_data.R code/01_make_table1.R code/02_regression_analysis.R code/03_render_report.R README.md Makefile data/data_final.RDS
+PROJECTFILES= report.Rmd code/00_simulate_data.R code/01_make_table1.R code/02_regression_analysis.R code/03_render_report.R Makefile data/data_final.RDS
 RENVFILES= renv.lock renv/activate.R renv/settings.json
 
 final_project_image:
 	Dockerfile $(PROJECTFILES) $(RENVFILES)
-	docker build -t final_project_image .
+	docker build -t sabrishamcar/final_project_image .
 	touch $@
 
-final_report/report.html:
+WIN_final_report/report.html:
 	docker run -v "/$(pwd)/final_report":/project/final_report sabrishamcar/final_project_image
 	
+MAC_final_report/report.html:
+	docker run -v "$(pwd)/final_report":/project/final_report sabrishamcar/final_project_image

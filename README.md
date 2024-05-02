@@ -33,4 +33,5 @@ Step 2: Run `make install`, which will run `renv::restore()` to restore the pack
 
 ## Build report using a Docker image
 Step 1: Ensure you are in the working directory where this project lives
-Step 2: Run `make final_report/report.html`. This may take a few minutes to run.
+
+Step 2: If you are on a Windows OS, run `make WIN_final_report/report.html`. If you are on an Mac/Linux OS, run `make MAC_final_report/report.html`. This may take a few minutes to run.

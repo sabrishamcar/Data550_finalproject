@@ -23,7 +23,6 @@ RUN mkdir output
 COPY code code
 COPY data data
 COPY Makefile .
-COPY report.html .
 COPY report.Rmd .
 
 RUN mkdir final_report
