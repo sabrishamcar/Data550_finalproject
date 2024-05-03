@@ -36,5 +36,6 @@ Step 1: Ensure you are in the working directory where this project lives
 
 Step 2: If you are on a Windows OS, run `make WIN_report/report.html`. If you are on an Mac/Linux OS, run `make MAC_report/report.html`. This may take a few minutes to run. The final report will be stored in the directory `report`.
 
+Link to DockerHub image: https://hub.docker.com/layers/sabrishamcar/final_project_image/latest/images/sha256:8c86aa83671fa11625d51b0832bca1555d8f6ef4a9b479108f1e283224a61d68?uuid=FD60FFEA-B672-439A-967E-328B0CFCDEFC 
 ## Build report using a Docker image locally
 If you would like to build the Docker image locally, please run `make final_project_image`. The final report will be stored in the directory `report`.
