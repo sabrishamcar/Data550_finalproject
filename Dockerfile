@@ -25,8 +25,8 @@ COPY data data
 COPY Makefile .
 COPY report.Rmd .
 
-RUN mkdir final_report
+RUN mkdir report
 
-CMD make && mv report.html final_report
+CMD make && mv report.html report
 
 

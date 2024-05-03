@@ -25,8 +25,8 @@ final_project_image:
 	touch $@
 
 #If you don't want to build locally
-WIN_final_report/report.html:
-	docker run -v "/$$(pwd)/final_report":/project/final_report sabrishamcar/final_project_image
+WIN_report/report.html:
+	docker run -v "/$$(pwd)/report":/project/report sabrishamcar/final_project_image
 	
-MAC_final_report/report.html:
-	docker run -v "$$(pwd)/final_report":/project/final_report sabrishamcar/final_project_image
+MAC_report/report.html:
+	docker run -v "$$(pwd)/report":/project/report sabrishamcar/final_project_image

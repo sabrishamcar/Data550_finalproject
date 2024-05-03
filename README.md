@@ -31,7 +31,10 @@ Step 1: `Run Rscript renv/activate.R`
 
 Step 2: Run `make install`, which will run `renv::restore()` to restore the package versions on your computer.
 
-## Build report using a Docker image
+## Build report using a Docker image on DockerHub
 Step 1: Ensure you are in the working directory where this project lives
 
-Step 2: If you are on a Windows OS, run `make WIN_final_report/report.html`. If you are on an Mac/Linux OS, run `make MAC_final_report/report.html`. This may take a few minutes to run.
+Step 2: If you are on a Windows OS, run `make WIN_report/report.html`. If you are on an Mac/Linux OS, run `make MAC_report/report.html`. This may take a few minutes to run. The final report will be stored in the directory `report`.
+
+## Build report using a Docker image locally
+If you would like to build the Docker image locally, please run `make final_project_image`. The final report will be stored in the directory `report`.
