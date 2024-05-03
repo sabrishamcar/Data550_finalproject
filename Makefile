@@ -18,13 +18,15 @@ install:
 PROJECTFILES= report.Rmd code/00_simulate_data.R code/01_make_table1.R code/02_regression_analysis.R code/03_render_report.R Makefile data/data_final.RDS
 RENVFILES= renv.lock renv/activate.R renv/settings.json
 
+#If you want to build locally
 final_project_image:
 	Dockerfile $(PROJECTFILES) $(RENVFILES)
 	docker build -t sabrishamcar/final_project_image .
 	touch $@
 
+#If you don't want to build locally
 WIN_final_report/report.html:
-	docker run -v "/$(pwd)/final_report":/project/final_report sabrishamcar/final_project_image
+	docker run -v "/$$(pwd)/final_report":/project/final_report sabrishamcar/final_project_image
 	
 MAC_final_report/report.html:
-	docker run -v "$(pwd)/final_report":/project/final_report sabrishamcar/final_project_image
+	docker run -v "$$(pwd)/final_report":/project/final_report sabrishamcar/final_project_image
